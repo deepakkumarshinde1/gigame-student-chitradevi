@@ -1,6 +1,15 @@
 import { Component } from "react";
 
 class ClassComp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "Deepakkumar",
+      count: 0,
+      otp: this.props.otp,
+    };
+  }
+
   static getDerivedStateFromProps(newProps, oldState) {
     return {
       ...oldState,
