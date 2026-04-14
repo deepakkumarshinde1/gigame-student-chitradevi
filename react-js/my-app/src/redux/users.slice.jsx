@@ -7,6 +7,7 @@ const UserSlice = createSlice({
   },
   reducers: {
     genOtp(state, action) {
+      // action.payload => a
       let newOTP = Math.round(Math.random() * 1000);
       state.otp = newOTP;
     },

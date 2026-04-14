@@ -1,38 +1,13 @@
 import { Component } from "react";
+import { useSelector } from "react-redux";
 
-class ClassComp extends Component {
-  static getDerivedStateFromProps(newProps, oldState) {
-    return {
-      ...oldState,
-      otp: newProps.otp,
-    };
-  }
-  // react lifecycle
-  // mounting
-  componentDidMount() {
-    // api call
-  }
-
-  // unmounting
-  componentWillUnmount() {}
-
-  // updating
-  componentDidUpdate() {}
-
-  componentDidCatch(error, info) {}
-  shouldComponentUpdate(nextProps, nextState) {
-    // do we need to update the component or not
-    // if we return true then the component will update otherwise it will not update
-    return true;
-  }
-  render() {
-    return (
-      <>
-        <h1>Hello, {this.state.name}</h1> <h1>{this.props.text}</h1>
-        <h1>OTP is : {this.state.otp}</h1>
-      </>
-    );
-  }
+function ClassComp() {
+  let { otp } = useSelector((state) => state.userSlice);
+  return (
+    <>
+      <h1>OTP is : {otp}</h1>
+    </>
+  );
 }
 
 export default ClassComp;
