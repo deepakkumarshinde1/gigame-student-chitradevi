@@ -5,6 +5,7 @@ import ClassComp from "./ClassComp";
 import { useDispatch } from "react-redux";
 import { genOtp } from "./redux/users.slice";
 import Login from "./Login";
+import UserList from "./UserList";
 
 // import ( optional )
 
@@ -13,10 +14,11 @@ function App() {
   let dispatch = useDispatch();
   return (
     <>
-      <h1>Hello</h1>
+      {/* <h1>Hello</h1>
       <button onClick={() => dispatch(genOtp("a"))}>Create OTP</button>
       <ClassComp text="Hello Chitra" />
-      <Login />
+      <Login /> */}
+      <UserList />
     </>
   );
 } // comp
